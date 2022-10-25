@@ -1,0 +1,147 @@
+    {
+        "input": "xxyy",
+        "startState": "q0",
+        "states": [
+            {
+                "state": "q0",
+                "transitions": [
+                    {
+                        "read": [
+                            "x"
+                        ],
+                        "replace": "X",
+                        "direction": "R",
+                        "nextState": "qy?"
+                    },
+                    {
+                        "read": [
+                            "y",
+                            "#"
+                        ],
+                        "replace": "#",
+                        "direction": "R",
+                        "nextState": "qnon"
+                    }
+                ]
+            },
+            {
+                "state": "qy?",
+                "transitions": [
+                    {
+                        "read": [
+                            "x",
+                            "Y"
+                        ],
+                        "replace": "",
+                        "direction": "R",
+                        "nextState": "qy?"
+                    },
+                    {
+                        "read": [
+                            "y"
+                        ],
+                        "replace": "Y",
+                        "direction": "L",
+                        "nextState": "qx?"
+                    },
+                    {
+                        "read": [
+                            "#"
+                        ],
+                        "replace": "#",
+                        "direction": "R",
+                        "nextState": "qoui"
+                    }
+                ]
+            },
+            {
+                "state": "qx?",
+                "transitions": [
+                    {
+                        "read": [
+                            "Y"
+                        ],
+                        "replace": "Y",
+                        "direction": "L",
+                        "nextState": "qx?"
+                    },
+                    {
+                        "read": [
+                            "x"
+                        ],
+                        "replace": "x",
+                        "direction": "L",
+                        "nextState": "qx<"
+                    },
+                    {
+                        "read": [
+                            "X"
+                        ],
+                        "replace": "X",
+                        "direction": "R",
+                        "nextState": "qny"
+                    }
+                ]
+            },
+            {
+                "state": "qx<",
+                "transitions": [
+                    {
+                        "read": [
+                            "x"
+                        ],
+                        "replace": "x",
+                        "direction": "L",
+                        "nextState": "qx<"
+                    },
+                    {
+                        "read": [
+                            "X"
+                        ],
+                        "replace": "X",
+                        "direction": "R",
+                        "nextState": "q0"
+                    }
+                ]
+            },
+            {
+                "state": "qny",
+                "transitions": [
+                    {
+                        "read": [
+                            "Y"
+                        ],
+                        "replace": "Y",
+                        "direction": "R",
+                        "nextState": "qny"
+                    },
+                    {
+                        "read": [
+                            "#"
+                        ],
+                        "replace": "#",
+                        "direction": "R",
+                        "nextState": "qoui"
+                    },
+                    {
+                        "read": [
+                            "y"
+                        ],
+                        "replace": "y",
+                        "direction": "R",
+                        "nextState": "qnon"
+                    }
+                ]
+            },
+            {
+                "state": "qoui",
+                "transitions": [],
+                "print": "MOT ACCEPTÉ"
+            },
+            {
+                "state": "qnon",
+                "transitions": [],
+                "print": "MOT REFUSÉ"
+            }
+        ]
+    }

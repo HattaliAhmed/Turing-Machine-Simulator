@@ -1,0 +1,103 @@
+{
+  "input": "111-11",
+  "startState": "q1",
+  "states": [
+    {
+      "state": "q1",
+      "transitions": [
+        {
+          "read": [
+            "1"
+          ],
+          "replace": "1",
+          "direction": "R",
+          "nextState": "q2"
+        }
+      ]
+    },
+    {
+      "state": "q2",
+      "transitions": [
+        {
+          "read": [
+            "1"
+          ],
+          "replace": "1",
+          "direction": "R",
+          "nextState": "q2"
+        },
+        {
+          "read": [
+            "-"
+          ],
+          "replace": "-",
+          "direction": "R",
+          "nextState": "q3"
+        }
+      ]
+    },
+    {
+      "state": "q3",
+      "transitions": [
+        {
+          "read": [
+            "1"
+          ],
+          "replace": "*",
+          "direction": "L",
+          "nextState": "q4"
+        },
+        {
+          "read": [
+            "*"
+          ],
+          "replace": "*",
+          "direction": "R",
+          "nextState": "q3"
+        }
+      ]
+    },
+    {
+      "state": "q4",
+      "transitions": [
+        {
+          "read": [
+            "*"
+          ],
+          "replace": "*",
+          "direction": "L",
+          "nextState": "q4"
+        },
+        {
+          "read": [
+            "-"
+          ],
+          "replace": "-",
+          "direction": "L",
+          "nextState": "q5"
+        }
+      ]
+    },
+    {
+      "state": "q5",
+      "transitions": [
+        {
+          "read": [
+            "*"
+          ],
+          "replace": "*",
+          "direction": "L",
+          "nextState": "q5"
+        },
+        {
+          "read": [
+            "1"
+          ],
+          "replace": "*",
+          "direction": "R",
+          "nextState": "q2"
+        }
+      ]
+    }
+  ]
+}

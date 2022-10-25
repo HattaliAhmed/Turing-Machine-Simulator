@@ -1,0 +1,44 @@
+{
+  "input": "1011",
+  "startState": "right",
+  "states": [
+    {
+      "state": "right",
+      "transitions": [
+        {
+          "read": ["1", "0"], 
+          "replace": "",
+          "direction": "R",
+          "nextState": "right"
+        },
+        {
+          "read": [" "],
+          "replace": "",
+          "direction": "L",
+          "nextState": "carry"
+        }
+      ]
+    },
+    {
+      "state": "carry",
+      "transitions": [
+        {
+          "read": ["1"],
+          "replace": "0",
+          "direction": "L",
+          "nextState": "carry"
+        },
+        {
+          "read": ["0", " "],
+          "replace": "1",
+          "direction": "L",
+          "nextState": "donne"
+        }
+      ]
+    },
+    {
+      "state": "donne",
+      "transitions": null
+    }
+  ]
+}
